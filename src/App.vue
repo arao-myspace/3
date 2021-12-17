@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div :style="backgroundStyle" id="app">
+    <clock></clock>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import clock from "./components/ClockComp.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    clock,
+  },
+  data() {
+    return {
+      backgroundStyle: {
+        background:
+          "conic-gradient(from 90deg at 25% -10%, #ff4500, #d3f340, #7bee85, #afeeee, #7bee85)",
+        display: "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        height: "100vh",
+        margin: "auto",
+      },
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+html,
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+  height: 100%;
 }
 </style>
